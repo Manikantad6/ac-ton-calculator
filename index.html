@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AC Ton Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>🌡️ AC Ton Calculator</h1>
+      <p>Find the right AC capacity for your room in seconds.</p>
+    </header>
+
+    <div class="card">
+      <form id="calcForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="length">Room Length (ft)</label>
+            <input type="number" id="length" placeholder="e.g. 15" min="1" required />
+          </div>
+          <div class="form-group">
+            <label for="width">Room Width (ft)</label>
+            <input type="number" id="width" placeholder="e.g. 12" min="1" required />
+          </div>
+          <div class="form-group">
+            <label for="height">Room Height (ft)</label>
+            <input type="number" id="height" placeholder="e.g. 10" min="1" value="10" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="sunlight">Sunlight Exposure</label>
+            <select id="sunlight">
+              <option value="1.0">Normal / Shaded</option>
+              <option value="1.1">Moderate Sun</option>
+              <option value="1.2">Heavy Sun (South/West facing)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="occupants">Number of Occupants</label>
+            <input type="number" id="occupants" placeholder="e.g. 2" min="1" value="2" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="roomType">Room Type</label>
+            <select id="roomType">
+              <option value="0">Bedroom / Living Room</option>
+              <option value="0.5">Kitchen</option>
+              <option value="0.25">Office / Study</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="floorType">Floor / Location</label>
+            <select id="floorType">
+              <option value="0">Ground / Middle Floor</option>
+              <option value="0.5">Top Floor (direct roof heat)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="climate">Climate Zone</label>
+            <select id="climate">
+              <option value="1.0">Moderate (Bangalore, Pune, Shimla)</option>
+              <option value="1.1">Humid (Mumbai, Chennai, Kolkata)</option>
+              <option value="1.2">Hot & Dry (Delhi, Rajasthan, Gujarat)</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn">Calculate AC Capacity</button>
+      </form>
+
+      <div id="result" class="result hidden">
+        <div class="result-icon">❄️</div>
+        <p class="result-label">Recommended AC Capacity</p>
+        <p class="result-value" id="resultValue">—</p>
+        <p class="result-note" id="resultNote"></p>
+      </div>
+    </div>
+
+    <!-- Affiliate / Marketing Section -->
+    <section class="affiliate-section">
+      <h2>Top AC Picks for Your Room</h2>
+      <p class="affiliate-note">Affiliate links — we may earn a small commission at no extra cost to you.</p>
+      <div class="affiliate-grid">
+        <a href="#" class="affiliate-card" target="_blank" rel="noopener">
+          <div class="affiliate-badge">1.0 Ton</div>
+          <div class="affiliate-info">
+            <strong>Best for Small Rooms</strong>
+            <span>Up to 120 sq ft</span>
+            <span class="affiliate-cta">Shop Now →</span>
+          </div>
+        </a>
+        <a href="#" class="affiliate-card" target="_blank" rel="noopener">
+          <div class="affiliate-badge">1.5 Ton</div>
+          <div class="affiliate-info">
+            <strong>Most Popular</strong>
+            <span>120–180 sq ft</span>
+            <span class="affiliate-cta">Shop Now →</span>
+          </div>
+        </a>
+        <a href="#" class="affiliate-card" target="_blank" rel="noopener">
+          <div class="affiliate-badge">2.0 Ton</div>
+          <div class="affiliate-info">
+            <strong>Large Rooms</strong>
+            <span>180–250 sq ft</span>
+            <span class="affiliate-cta">Shop Now →</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <p>Results are estimates based on standard BTU calculations. Consult an HVAC professional for precise sizing.</p>
+    </footer>
+  </div>
+
+  <script src="calculator.js"></script>
+</body>
+</html>
